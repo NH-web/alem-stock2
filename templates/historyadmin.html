@@ -1,0 +1,74 @@
+
+{%load static%}
+{%block content%}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> 
+		
+		
+	</title>
+	<link rel="stylesheet" href="{% static 'css/history_admin.css'%}">
+</head>
+<div class="containers">
+	<div class="sidebar">
+			<h4 class="title" style="top: 45px;">History <span id="title">{{title}}</span></h4>
+			<form method='POST' action='' class="inputtake">
+		{%csrf_token%}
+		<span id='category'>Category</span>{{form.history_category}}
+		<span id="export">Export to CSV</span>
+		{{form.export_to_csv}}
+		<input type="submit" name="Search" id="submitbtn" />
+	</form >
+	<ul class="alluserslist">
+		<li><a href="/admin/auth/user/add/">Add Users</a></li>
+		<a href="{% url 'history_list_all'%}"><li>All</li>
+	{%for i in userslist%}<a href="{% url 'stock_list_user' i%}">
+	<li>{{i}}</li></a>
+	{%endfor%}
+</ul>
+		</div>
+	<div class="list-of-items">
+<main class="table">
+		<section class="table__header">
+		
+		</section>
+		<section class="table__body">
+			<table>
+		<thead>
+			<tr>
+			<th>No</th>
+			<th>Category</th>	
+			<th>Username</th>
+			<th>ISSUED</th>
+			<th>RECEIVED</th>
+			<th>FS NUMBER</th>
+			<th>TARGA NUMBER</th>
+			<th>LAST UPDATED</th>
+			<th>delete</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+				{%for instance in quaryset%}
+				<td>{{forloop.counter}}</td>
+				<td><a href="{%url 'stock_detail' instance.id%}">{{instance.history_category}}</a></td>
+				
+				<td><a href="{%url 'stock_detail' instance.id%}">{{instance.history_username}}</a></td>
+				<td>{{instance.history_issue_quantity}}</td>
+				<td>{{instance.history_receive_quantity}}</td>
+				<td>{{instance.history_fs_number}}</td>
+				<td>{{instance.history_targa_number}}</td>
+				<td style="color: #226160;">{{instance.history_last_updated}}</td>
+				<td><a href="{% url 'delete_items' instance.id %}" style="color: red;">Delete</a></td>
+			</tr>
+			{%endfor%}
+			</tbody>
+	</table>
+		</section>		
+	</main>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,180 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stock Managment</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/stdetail.css'%}">
+</head>
+<body>
+	{% if messages %}
+	<div class="messa" style="position: absolute;bottom: 0;width: 10%;height: fit-content;background: rgba(0, 0, 0, 0.4);z-index: 40;">
+	<ul class="messages" style="color: #fff;opacity:0.6;font-size: 12px;font-style: oblique;">
+		{%for message in messages %}
+				<li {% if message.tags %} class="{{message.tags}}"{%endif%}>{{message}}</li>
+				{%endfor%}
+				
+
+	</ul>
+</div>
+	{%endif%}
+	<div class="container">
+				<div class="sidebar">
+			
+				<img src="{% static 'img/stockalemlogo.png'%}" id='logo'>
+				<h1 id='logoname'>Alem</h1>
+				<a href="/profile">
+				<div class="profile">
+					<img src="{% static 'img/avatar.png'%}" id="avatar">
+					<h1 id="uname">{{user}}</h1>
+					<p id="upriv">{{role}}</p>
+					
+				</div>
+			</a>
+		
+
+
+				<div class="list-of-options">
+					
+					<div class="sl" id="sl">
+
+						<li id='s'><img src="{% static 'img/stock.png'%}" id='stockslist'>Stock <img src="{% static 'img/arrow.png'%}" id="toggle-btn-s"></li>
+							
+					</div>
+
+					<div class='stocklist'><ul id="stocklist">
+								<a href="/add_items"><li>Add</li></a>
+
+								<a href="/stock_list" id='list'><li>List</li></a>
+							</ul>
+						</div>
+						<a href="/">
+					<div class="slah" id="k">
+						<li id="his"><img src="{% static 'img/dashboard.png'%}"id='dash'>Home</li>
+					</div></a>
+						<a href="/notification">
+					<div class="sla" id="k">
+						<li id="his"><img src="{% static 'img/bells.png'%}" id="noti">Notifications</li>
+				</div></a>
+				
+
+				</div>
+				<div class="foot">
+					<form method="POST" action="/accounts/logout/">
+					<!--{%if approved == 1%}
+					<a href="/admin/auth/user/add" id="adduser">Add User</a>
+					{%endif%}-->
+					{%csrf_token%}
+					<button id="foota">Logout<img src="{% static 'img/lout.png'%}" id="logout"></button>
+			</form></div>
+		</div>
+
+		<div class="dashboard">
+			<form method="POST" action="">
+				{%csrf_token%}
+				{{form.history_fs_number}}<span id='fsid'>Fs Number</span>
+				<div class="tar">{{form.history_targa_number}}<span id='targaid'>Targa Number</span></div>
+				<input type="submit" name="Search" value="Search" id="sear">
+
+			</form>
+			<a href="/notification">
+			<div class="notif"><img src="{% static 'img/bells.png'%}" id="notif"></div>
+		</a>
+		<div class="overview">
+			
+			<div class="sales">
+				<h1>Sales</h1>
+				<img src="{% static 'img/box.png'%}" id="cart">
+				<span>{{sales_amount}} pcs</span>
+			</div>
+			<div class="purch">
+				<h1>Purchase</h1>
+				<img src="{% static 'img/box.png'%}" id="cart">
+				<span>{{purch_amount}} pcs</span>
+			</div>
+			<div class="sales-amount">
+				<h1>Sales Amount</h1>
+				<img src="{% static 'img/money.png'%}" id="cart">
+				<span>{{sales_price}} Birr</span>
+			</div>
+			<div class="purch-amount">
+				<h1>Purchase Amount</h1>
+				<img src="{% static 'img/money.png'%}" id="cart">
+				<span>{{purch_price}} Birr</span>
+			</div>
+		
+		</div>
+		
+		<div class="list-of-items">
+		<main class="table">
+		<section class="table__header">
+
+		</section>
+		<section class="table__body">
+			<table>
+		<thead>
+			<tr>
+			<th>No</th>
+			<th>Category</th>
+		
+			<th>User</th>	
+
+			<th>Sales Qty</th>
+			<th>FS Number</th>
+			<th>Sales Price</th>
+			<th>Purchase Qty</th>
+			<th>Purchase Price</th>
+			<th>Targa Number</th>
+			<th>On Hand</th>
+			<th>Date</th>
+			
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+
+				{%for instance in p%}
+
+				<td>{{forloop.counter}}</td>
+				<td>{{instance.history_category}}</td>
+				
+				<td>{{instance.history_username}}</td>
+				
+				<td>{{instance.history_issue_quantity}}</td>
+				<td>{{instance.history_fs_number}}</td>
+				<td>{{instance.history_sales_price}}</td>
+				<td>{{instance.history_receive_quantity}}</td>
+				<td>{{instance.history_purch_price}}</td>
+				<td>{{instance.history_targa_number}}</td>
+				<td>{{instance.history_onhand}}</td>
+				<td style="color: #226160;">{{instance.history_last_updated}}</td>
+			</ol>
+			</tr>
+				{%endfor%}
+			</tbody>
+	</table>
+		</section>		
+	</main>
+		</div>
+		<div class="price-list">
+			<div class='head'><h1>Details</h1></div>
+			<div class="prices">
+			<ul>
+				<li>Category <span>{{quaryset.category}}</span></li>
+				<li>Username <span>{{quaryset.username}}</span></li>
+				<li>Qty OnHand <span>{{quaryset.onhand}}</span></li>
+				<li>Sales Price <span>{{quaryset.sales_price}}</span></li>			
+			</ul>
+			
+		</div>
+		</div>
+		<div class="btniss">
+			<a href="{% url 'issue_items' quaryset.id%}"><span>ISSUE ITEM</span></a>
+			<a href="{% url 'receive_items' quaryset.id%}"><span>RECEIVE ITEM</span></a>
+		</div>
+	</div>
+	</div>
+
+</body>
+</html>

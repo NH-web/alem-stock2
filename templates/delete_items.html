@@ -1,0 +1,79 @@
+{%block content%}
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	.boxm2{
+		position: relative;
+		width: 100%;height: 100vh;
+		display: flex;
+		align-items: center;
+		background: rgba(11, 0, 39, 1);
+		justify-content: center;
+	}
+	#ask{
+		font-size: 40px;
+		color: rgba(255, 27, 27, 0.5);
+		animation-name: beat;
+		animation-delay: 1s;
+		animation-duration:5s;
+		animation-iteration-count: infinite;
+		}
+	@keyframes beat{
+		0%{
+			opacity: 0;
+		}
+		10%{
+			opacity: 0.2;
+		}
+		30%{
+			opacity: 0.4;
+		}
+		50%{
+			opacity: 0.6;
+		}
+		70%{
+			opacity: 0.7;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	.btn-danger{
+		position: absolute;
+		width: 200px;
+		height: 3rem;
+		left:40%;
+		border: none;
+		border-radius: 2rem;
+		font-size: 17px;
+		color: #fff;
+		cursor: pointer;
+		background: linear-gradient(-45deg,#2500B0,#0B0030);
+	}
+	.btn-primary{
+		position: absolute;
+		width: fit-content;
+		height: fit-content;
+		left: 47%;
+		border: none;
+		background: transparent;
+		border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+		border-radius: .1rem;
+		box-shadow: 5px 2px 20px rgb(255 255 255 / 0.2);
+		top: 70%;
+		text-align: center;
+		color: #fff;
+	}
+</style>
+<div class="boxm2">
+<form method="POST" action="">
+	{%csrf_token %}
+	<h1 id='ask'>Are you sure you want to delete?</h1><br>
+	<input class="btn-danger" type="submit" value="Yes">
+	<a href="/stock_list"><div class="btn-primary">Cancel</div></a>
+</form>
+{%endblock%}
+</div>

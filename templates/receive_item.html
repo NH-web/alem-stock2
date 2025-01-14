@@ -1,0 +1,111 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stock Managment</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/additemlayout.css'%}">
+</head>
+<body>
+	{% if messages %}
+	<div class="messa" style="position: absolute;bottom: 0;width: 10%;height: fit-content;background: rgba(0, 0, 0, 0.4);z-index: 40;">
+	<ul class="messages" style="color: #fff;opacity:0.6;font-size: 12px;font-style: oblique;">
+		{%for message in messages %}
+				<li {% if message.tags %} class="{{message.tags}}"{%endif%}>{{message}}</li>
+				{%endfor%}
+				
+
+	</ul>
+</div>
+	{%endif%}
+	<div class="container">
+		<div class="sidebar">
+			
+				<img src="{% static 'img/stockalemlogo.png'%}" id='logo'>
+				<h1 id='logoname'>Alem</h1>
+				<a href="/profile">
+				<div class="profile">
+					<img src="{% static 'img/avatar.png'%}" id="avatar">
+					<h1 id="uname">{{user}}</h1>
+					<p id="upriv">{{role}}</p>
+					
+				</div>
+			</a>
+		
+
+
+				<div class="list-of-options">
+					
+					<div class="sl" id="sl">
+
+						<li id='s'><img src="{% static 'img/stock.png'%}" id='stockslist'>Stock <img src="{% static 'img/arrow.png'%}" id="toggle-btn-s"></li>
+							
+					</div>
+
+					<div class='stocklist'><ul id="stocklist">
+								<a href="/add_items">Add</li></a>
+
+								<a href="/stock_list" id='list'><li>List</li></a>
+							</ul>
+						</div>
+						<a href="/">
+					<div class="slah" id="k">
+						<li id="his"><img src="{% static 'img/dashboard.png'%}"id='dash'>Home</li>
+					</div></a>
+						<a href="/notification">
+					<div class="sla" id="k">
+						<li id="his"><img src="{% static 'img/bells.png'%}" id="noti">Notifications</li>
+				</div></a>
+				
+
+				</div>
+				<div class="foot">
+					<form method="POST" action="/accounts/logout/">
+					<!--{%if approved == 1%}
+					<a href="/admin/auth/user/add" id="adduser">Add User</a>
+					{%endif%}-->
+					{%csrf_token%}
+					<button id="foota">Logout<img src="{% static 'img/lout.png'%}" id="logout"></button>
+			</form></div>
+		</div>
+
+
+		<div class="dashboard">
+	
+	
+	<form method="POST" action="" class="f">
+		
+		<fieldset>
+			<legend><img src="{% static 'img/car.png'%}" id="addi"><h2>{{title}}</h2></legend>
+		{% csrf_token %}
+		<span id='diff'>Category</span>{{form.category}}
+		<span id="n">Username</span>
+		{{form.username}}
+		<span id='bg'>Received Amount</span>
+		{{form.receive_quantity}}
+		<span id='pri'>Targa Number</span>
+		{{form.targa_number}}
+		<span id="onhan">Price</span>
+		{{form.purch_price}}
+
+		<input type="submit" id="submitbtn" value="Save"/>
+	</fieldset>
+	</form>
+	<div class="price-list">
+			<div class='head'><h1>category</h1><h2>price</h2></div>
+			<div class="prices">
+			<ul>
+				<li>Category </li><span>{{instance.category}}</span>
+				<li>Username </li><span>{{instance.username}}</span>
+				<li>Qty OnHand </li><span>{{instance.onhand}}</span>
+				<li>Sales Price</li><span>{{instance.sales_price}}</span>
+			</ul>
+			
+		</div>
+		</div>
+
+</div>
+</div>
+</body>
+</html>

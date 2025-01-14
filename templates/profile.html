@@ -1,0 +1,140 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stock Managment</title>
+	<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css'%}">
+</head>
+<body>
+	{% if messages %}
+	<div class="messa" style="position: absolute;bottom: 0;width: 10%;height: fit-content;background: rgba(0, 0, 0, 0.4);z-index: 40;">
+	<ul class="messages" style="color: #fff;opacity:0.6;font-size: 12px;font-style: oblique;">
+		{%for message in messages %}
+				<li {% if message.tags %} class="{{message.tags}}"{%endif%}>{{message}}</li>
+				{%endfor%}
+				
+
+	</ul>
+</div>
+	{%endif%}
+	
+
+	<div class="container">
+		<div class="sidebar">
+			
+				<img src="{% static 'img/stockalemlogo.png'%}" id='logo'>
+				<h1 id='logoname'>Alem</h1>
+				<a href="/profile">
+				<div class="profile">
+					<img src="{% static 'img/avatar.png'%}" id="avatar">
+					<h1 id="uname">{{user}}</h1>
+					<p id="upriv">{{role}}</p>
+					
+				</div>
+			</a>
+		
+
+
+				<div class="list-of-options">
+					
+					<div class="sl" id="sl">
+
+						<li id='s'><img src="{% static 'img/stock.png'%}" id='stockslist'>Stock <img src="{% static 'img/arrow.png'%}" id="toggle-btn-s"></li>
+							
+					</div>
+
+					<div class='stocklist'><ul id="stocklist">
+								<a href="/add_items"><li>Add</li></a>
+
+								<a href="/stock_list" id='list'><li>List</li></a>
+							</ul>
+						</div>
+						<a href="/">
+					<div class="slah" id="k">
+						<li id="his"><img src="{% static 'img/dashboard.png'%}"id='dash'>Home</li>
+					</div></a>
+						<a href="/notification">
+					<div class="sla" id="k">
+						<li id="his"><img src="{% static 'img/bells.png'%}" id="noti">Notifications</li>
+				</div></a>
+				
+
+				</div>
+				<div class="foot">
+					<form method="POST" action="/accounts/logout/">
+					<!--{%if approved == 1%}
+					<a href="/admin/auth/user/add" id="adduser">Add User</a>
+					{%endif%}-->
+					{%csrf_token%}
+					<button id="foota">Logout<img src="{% static 'img/lout.png'%}" id="logout"></button>
+			</form></div>
+		</div>
+
+		<div class="dashboard">
+			<span id='shead'><h1 id='head'>Profile</h1></span>
+			<div class='profile-detail'>
+				<div class="headers">
+				<h1 id='un'>USERNAME </h1>
+				<h1 id='rol'>ROLE </h1>
+				<h1 id='tsales'>TOTAL SALES </h1>
+				<h1 id='tpurch'>TOTAL PURCHASE </h1>
+			</div>
+			<div class="values">
+				<span class="un">{{user}}</span>
+				<span class="rol">{{role}}</span>
+				<span class="tsales">{{sales_amount}} PCS</span>
+				<span class="tpurch">{{purch_amount}} PCS</span>
+			</div>
+			</div>
+
+			<div class="export">
+				<button type="submit" id="toggle">Download Summary</button>
+				<button type="submit" id='toggle-history'>Download Full Report</button>
+				<div class="summary">
+					<form method="POST" action="">
+						{%csrf_token%}
+						{%if role == "Manager"%}
+								<span>Username </span>{{form.history_username}}
+								<span>Export CSV</span>{{form.export_to_csv}}
+						{%else%}
+
+								<span>Export CSV</span>{{form.export_to_csv}}
+						{%endif%}
+				<input type="submit" name="Search" value="Download" id="summ">
+			</form>
+		</div>
+		<div class="report">
+			<form method="POST" action="">
+						{%csrf_token%}
+						{%if role == "Manager"%}
+								<span>Category</span>							
+								{{form.history_category}}
+								<span>Username</span>
+								{{form.history_username}}
+								<span>Export CSV</span>
+								{{form.history_export_to_csv}}
+						{%else%}
+								<span>Category</span>
+								{{form.history_category}}		
+								<span>Export CSV</span>
+								{{form.history_export_to_csv}}
+							{%endif%}
+				<input type="submit" name="Search" value="Download" id="repo">
+			</form>
+		</div>
+		{%if role == "Manager"%}
+				
+					<a href="/admin/auth/user/add"><span class='adduser'>Add User</span></a>
+				
+		{%endif%}
+	</div>
+	</div>
+</div>
+</body>
+
+</html>

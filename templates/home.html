@@ -1,0 +1,151 @@
+
+
+{%load static%}
+{%block content%}
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="{% static 'css/homepag.css'%}" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	<title>{%block title%}Alem:Stock Managment System{%endblock%}</title>
+</head>
+
+<body>
+	<div class="com">
+		<div class="navbar">
+			<div class="logo">
+				<img src="{%static 'img/stockalemlogo.png'%}" id='logo'><h2>Alem</h2>
+			</div>
+			<div class="links">
+				<a href="/about-us">About us</a>
+				<a href="/pricing">Pricing</a>
+				<a href="/Services">Services</a>
+			</div>
+			<div class="logbtn">
+				<a href="/dashboard"><button type="submit" id="login"> Login</button></a>
+			</div>
+		</div>
+		<div class="col1">
+			<h1>Alem</h1>
+			<p>Welcome to <span id="name">Alem V2.0</span> Stock Managment System, Created to help manage your stocks <span id="highlight">smoothly</span> and <span id="highlight">easily</span>
+				<button id="btn2"><a href="/dashboard">Explore</a></button>
+		</div>
+		<div class="col2">
+			
+				<img src="{% static 'img/anima.gif'%}" id="stock">
+			
+		</div>
+	</div>
+	<div class="com2">
+		<div class="offers">
+			<div class="head">
+				<h1>We Provide</h1>
+			</div>
+			<div class="posts">
+				<div class="post1">
+					<img src="{% static 'img/secure.gif'%}">
+					<span>Security</span>
+					<h3>Our system have all the latest security features and tools to protect all your valuable data.</h3>
+				</div>
+				<div class="post2">
+					<img src="{% static 'img/relay.gif'%}">
+					<span>Reliablility</span>
+					<h3>Our system analyzes information and compares them with required data to make an accurate assessment.</h3>
+				</div>
+				<div class="post3">
+					<img src="{% static 'img/speed.gif'%}">
+					<span>Speed</span>
+					<h3>This application delivers and receives data as fast as possible the only downside is less animations are displayed inside the app.</h3>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="info">
+		<div class="heads">Data Visualization</div>
+		<div class="visual1">
+			<span id='graph1'>Line Chart Visualization</span>
+			<div class="para1"><p id="para1">Represent your data visually using non-linear lines, Line Chart is an advance way of representing the data as it shows every detial on every occasion. Making sure you don't miss any vital information regarding your stocks.</p></div>
+			<canvas id="myChart" style="width:100%;max-width:600px;height: 250px; background: transparent;"></canvas>
+
+		</div>
+		<div class="visual2">
+			<span id='graph2'>Pie Chart Visualization</span>
+			<div class="para2"><p id="para2">Reprsent your data visually using a circle shaped graph, Pie Chart is an easier and more faster method of gathering information about a specific occasion. Making sure you get a quick and faster summary about your stock.</p></div>
+			<canvas id="myChart2" style="width:100%;max-width:600px;height: 250px; background: transparent;"></canvas>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="s1">
+			<h1>How to create account?</h1>
+			<p>First you apply using the form and pay the necessary fees, You can select any offer you're comfortable with and after you completed this task we'll verify you're payment and enable you to get your membership</p>
+		</div>
+
+		<div class="s2">
+			<h1>Links</h1>
+
+			<ul>
+				<a href="/"><li>Home</li></a>
+				<a href="/accounts/login"><li>Login</li></a>
+				<a href="/"><li>Register</li></a>
+				<a href="/stock_list"><li>My stocks</li></a>
+			</ul>
+		</div>
+		<div class="s3">
+			<h1>Follow Us</h1>
+			<a href="instagram.com/@A.S.M.G(alem)"><img src="{%static 'img/ig.png'%}" id='img'></a>
+			<a href="facebook.com/@A.S.M.G(alem)"><img src="{% static 'img/fb.png'%}" id='img'></a>
+			<a href="telegram.com/@A.S.M.G(alem)"><img src="{%static 'img/tg.png'%}" id='img'></a>
+		</div>
+	</div>
+</body>
+<script>
+const xValues = ["2024/01/04","2024/03/11","2024/11/29"];
+const datas = ["Sales Amount","Purchased Amount"];
+const purch_amount_data = [200,500,180];
+const sales_amount_data = [250,460,300];
+const barColor = ['#c3090d', '#226160','rgba(10,50,200,1)']
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: sales_amount_data,
+      label:"Sales Quantity",
+      borderColor: "rgba(245,17,17,0.8)",
+      fill: false
+    },{
+      data: purch_amount_data,
+      label:"Purchase Quantity",
+      borderColor: "yellow",
+      fill: false
+    },
+    ]
+  },
+  options: {
+
+    legend: {display: true}
+  }
+});
+new Chart("myChart2", {
+	 type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColor,
+      data: purch_amount_data
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Purchase Amount"
+    }
+  }
+	});
+</script>
+</html>
+{%endblock%}

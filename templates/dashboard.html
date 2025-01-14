@@ -1,0 +1,200 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stock Managment</title>
+	<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+</head>
+<body>
+	{% if messages %}
+	<div class="messa" style="position: absolute;bottom: 0;width: 10%;height: fit-content;background: rgba(0, 0, 0, 0.4);z-index: 40;">
+	<ul class="messages" style="color: #fff;opacity:0.6;font-size: 12px;font-style: oblique;">
+		{%for message in messages %}
+				<li {% if message.tags %} class="{{message.tags}}"{%endif%}>{{message}}</li>
+				{%endfor%}
+				
+
+	</ul>
+</div>
+	{%endif%}
+	
+
+	<div class="container">
+		<div class="sidebar">
+			
+				<img src="{% static 'img/stockalemlogo.png'%}" id='logo'>
+				<h1 id='logoname'>Alem</h1>
+				<a href="/profile">
+				<div class="profile">
+					<img src="{% static 'img/avatar.png'%}" id="avatar">
+					<h1 id="uname">{{user}}</h1>
+					<p id="upriv">{{role}}</p>
+					
+				</div>
+			</a>
+		
+
+
+				<div class="list-of-options">
+					
+					<div class="sl" id="sl">
+
+						<li id='s'><img src="{% static 'img/stock.png'%}" id='stockslist'>Stock <img src="{% static 'img/arrow.png'%}" id="toggle-btn-s"></li>
+							
+					</div>
+
+					<div class='stocklist'><ul id="stocklist">
+								<a href="/add_items"><li>Add</li></a>
+
+								<a href="/stock_list" id='list'><li>List</li></a>
+							</ul>
+						</div>
+						<a href="/dashboard">
+					<div class="slah" id="k">
+						<li id="his"><img src="{% static 'img/dashboard.png'%}"id='dash'>Home</li>
+					</div></a>
+						<a href="/notification">
+					<div class="sla" id="k">
+						<li id="his"><img src="{% static 'img/bells.png'%}" id="noti">Notifications</li>
+				</div></a>
+				
+
+				</div>
+				<div class="foot">
+					<form method="POST" action="/accounts/logout/">
+					<!--{%if approved == 1%}
+					<a href="/admin/auth/user/add" id="adduser">Add User</a>
+					{%endif%}-->
+					{%csrf_token%}
+					<button id="foota">Logout<img src="{% static 'img/lout.png'%}" id="logout"></button>
+			</form></div>
+		</div>
+
+		<div class="dashboard">
+			{%if role == 'Manager' %}
+			<form method="POST" action="">
+				{%csrf_token%}
+				{{form.username}}
+				<input type="submit" name="Search" value="Username" id="sear" ><img src="{% static 'img/sear.png'%}" id="search">
+
+			</form>
+			{%endif%}
+			<a href="/notification">
+			<div class="notif"><img src="{% static 'img/bells.png'%}" id="notif"></div>
+		</a>
+		<div class="overview" >
+			
+			<div class="sales">
+				<h1>Sales</h1>
+				<img src="{% static 'img/box.png'%}" id="cart">
+				<span>{{sales_amount}} pcs</span>
+			</div>
+			<div class="purch">
+				<h1>Purchase</h1>
+				<img src="{% static 'img/box.png'%}" id="cart">
+				<span>{{purch_amount}} pcs</span>
+			</div>
+			<div class="sales-amount">
+				<h1>Sales Amount</h1>
+				<img src="{% static 'img/money.png'%}" id="cart">
+				<span>{{sales_price}} Birr</span>
+			</div>
+			<div class="purch-amount">
+				<h1>Purchase Amount</h1>
+				<img src="{% static 'img/money.png'%}" id="cart">
+				<span>{{purch_price}} Birr</span>
+			</div>
+		
+		</div>
+		<canvas id="myChart" style="width:100%;max-width:600px;height: 250px; background: transparent;"></canvas>
+		<div class="list-of-items">
+		<main class="table">
+		<section class="table__header">
+
+		</section>
+		<section class="table__body">
+			<table>
+		<thead>
+			<tr>
+			<th>No</th>
+			<th>Category</th>
+		
+			<th>User</th>	
+			<th>Beg Qty</th>
+			<th>Purchesed Qty</th>
+			<th>Sales Qty</th>
+			<th>on Hand</th>
+			<th>Time Stamp</th>
+			<th>delete</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+				{%for instance in quaryset%}
+				<td>{{forloop.counter}}</td>
+				<td><a href="{%url 'stock_detail' instance.id%}">{{instance.category}}</a></td>
+				
+				<td><a href="{%url 'stock_detail' instance.id%}">{{instance.username}}</a></td>
+				<td>{{instance.beg_quantity}}</td>
+				<td>{{instance.purch_quantity}}</td>
+				<td>{{instance.sales_quantity}}</td>
+				<td>{{instance.onhand}}</td>
+				<td style="color: #226160;">{{instance.timestamp}}</td>
+				<td><a href="{% url 'delete_items' instance.id %}" style="color: red;">Delete</a></td>
+			</tr>
+				{%endfor%}
+			</tbody>
+	</table>
+		</section>		
+	</main>
+		</div>
+		<div class="price-list">
+			<div class='head'><h1>category</h1><h2>price</h2></div>
+			<div class="prices">
+			<ul>
+				{%for instance in quaryset%}
+				<li>{{forloop.counter}} {{instance.category}}<span>{{instance.sales_price}}</span>  </li>
+				{%endfor%}
+			</ul>
+			
+		</div>
+		</div>
+		</div>
+	</div>
+
+</body>
+<script>
+const xValues = {{date_graph}};
+const datas = ["Sales Amount","Purchased Amount"]
+const purch_amount_data = {{purch_amount_graph}};
+const sales_amount_data = {{sales_amount_graph}};
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: sales_amount_data,
+      label:"Sales Quantity",
+      borderColor: "rgba(245,17,17,0.8)",
+      fill: false
+    },{
+      data: purch_amount_data,
+      label:"Purchase Quantity",
+      borderColor: "yellow",
+      fill: false
+    },
+    ]
+  },
+  options: {
+
+    legend: {display: true}
+  }
+});
+</script>
+</html>

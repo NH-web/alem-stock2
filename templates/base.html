@@ -1,0 +1,56 @@
+
+{% load static %}
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> 
+		
+		
+	</title>
+	<link rel="stylesheet" href="{% static 'css/login_layout.css'%}">
+</head>
+<html>
+<body>
+	<div class="cont">
+		<div class="login-reg">
+		<div class="login-col">
+			<h1>{%block title%}{%endblock%}</h1>
+			
+			{%block content%}
+			
+			{%endblock%}
+			
+		</div>
+		<a href="/" id='links'>
+			Home
+		</a>
+	
+		<!--<div class="desc-col">
+			<h1 id="logo">Alem</h1>
+			<p3 id="par">TOOL THAT MAKES STOCK MANAGMENT EASY AND SMOOTH</p3>
+			<button type="submit" class="signup">Join
+			</button>
+			<div class="social-icon">
+			<a href="#"><img src="{%static 'img/fb.png'%}" id="fb"></a>
+			<a href="#"><img src="{%static 'img/tg.png'%}" id="tg"></a>
+			<a href="#"><img src="{%static 'img/ig.png' %}" id="ig"></a>
+		</div>-->
+		</div>
+	</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	
+	var d = document.getElementById('btn'); 
+	var div = document.getElementById('c');
+	if d === 'Log in'{
+		div.style.display = "none";
+	}
+	else{
+		div.style.display = "block"
+	}
+</script>
+</html>
