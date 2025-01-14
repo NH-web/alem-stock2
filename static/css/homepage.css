@@ -1,0 +1,332 @@
+*{
+	
+	box-sizing: border-box;
+}
+
+.com{
+	position: relative;
+
+	width: 100%;
+	min-height: 92vh;
+	background: #0B0030;
+
+}
+.col1{
+	position: absolute;
+	width: 50%;
+	height: 95%;
+	display: flex;
+	overflow: auto;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border:0;
+	backdrop-filter: blur(10px);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	box-shadow: #226160 5px 0 60px 2px, #226160 0 5px 60px 2px;
+	background: #0B0030;
+
+}
+.col2{
+	position: absolute;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	
+}
+.col1 h1{
+	position: absolute;
+	top: 80px;
+	right: 40%;
+	filter:blur(20px);
+	color:#fff;
+	font-size: 80px;
+	filter: drop-shadow(3px 3px 10px #fff);
+	animation-name: hide;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+.col1 button{
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 45px;
+	border:0;
+	bottom:-130px;
+	right: 35%;
+	border-radius: 15px;
+	background:linear-gradient(60deg, #00093c, #2d0b00);
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0px 0px 20px #00093c, 0px 0px 5px #2d0b00 inset;
+	transition: 0.8s ease;
+
+}
+
+
+@keyframes hide{
+	0%{	
+		filter: blur(20px);
+	}
+	10%{
+		filter: blur(10px);
+	}
+	20%{
+		filter: blur(9px);
+	}
+	30%{
+		filter: blur(8px);
+	}
+	40%{
+		filter: blur(7px);
+	}
+	50%{
+		filter: blur(6px);
+	}
+	60%{
+		filter: blur(5px);
+	}
+	70%{
+		filter: blur(4px);
+	}
+	80%{
+		filter: blur(3px);
+	}
+	90%{
+		filter: blur(2px);
+	}
+	100%{
+		filter: blur(0);
+	}
+}
+.col1 p{
+	position: absolute;
+	color: #fff;
+	right: 30px;
+	left: 30px;
+	opacity: 0.7;
+	font-size: 30px;
+}
+span{
+	background: #fff;
+	color: #ff3527;
+
+}
+
+.box_contain{
+	position: relative;
+	border:3px solid;
+	border-color: #fff;
+
+	width: 50vh;
+	height: 50vh;
+	top: 120px;
+	right: 0;
+	bottom: 0;
+	left: 200px;
+	border-radius: 50%;
+	background: transparent;
+	justify-content: center;
+	align-items: center;
+	animation-name: spin;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+
+
+}
+.box_contain:hover{
+	animation-name: spin;
+
+	animation-play-state: initial;
+}
+@keyframes spin{
+	0%{
+
+	}
+	100%{
+		transform: rotate(360deg);
+
+	}
+}
+.box1{
+
+	position: absolute;
+	width:11vh;
+	height: 11.5vh;
+	left:0;
+	top: 0;
+	border-radius: 50%;
+	background: green;
+	border: 0;
+	box-shadow: 0px 0px 40px lightgreen, -15px 15px 15px limegreen inset;
+
+
+}
+.box2{
+	position: absolute;
+	width: 12vh;
+	height: 12vh;
+	right:0;
+	top: 0;
+	border-radius: 50%;
+	background:red;
+	border: 0;
+	box-shadow: 0px 0px 50px indianred, -10px 17px 5px darkred inset;
+
+}
+.box3{
+	position: absolute;
+	width: 14vh;
+	height: 14vh;
+
+	bottom: 0;
+	left: 0;
+	border-radius: 50%;
+	background: blue;
+	border:0;
+	box-shadow: 5px 5px 50px aliceblue, 17px -6px 5px darkblue inset;
+
+}
+.box4{
+	position: absolute;
+	width: 16vh;
+	height: 16vh;
+	bottom: 0;
+	right: 0;
+	border-radius: 50%;
+	background: purple;
+	border: 0;
+	box-shadow: 5px 5px 50px rebeccapurple, -6px 17px 20px mediumpurple inset;
+
+}
+
+.box5{
+	position: absolute;
+	width: 25vh;
+	height: 25vh;
+	bottom:25%;	
+	left: 25%;
+	
+	border-radius: 50%;
+	background: gold;
+	cursor: pointer;
+	border:0;
+	box-shadow: 5px 5px 50px gold, -6px 17px 20px lightgoldenrodyellow inset;
+
+}
+.box5::after{
+	content: 'Security';
+	font-size: 25px;
+	font-style: oblique;
+	position: absolute;
+	color:#fff;
+	display: none;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	right:-50px;
+	box-shadow: 5px 5px 50px gold, 0 0 5px #fff inset;
+
+	background: linear-gradient(45deg, #00093c, #2d0b00);
+	border-radius: 15px;
+}
+.box1::after{
+	content: 'Speed';
+	font-size: 18px;
+	font-style: oblique;
+	position: absolute;
+	color:#fff;
+	display: none;
+	width: 150px;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	top: -50px;
+	right:30px;
+	box-shadow: 5px 5px 50px lightgreen , 0px 0px 5px limegreen inset;
+
+	background: linear-gradient(45deg, #00093c, #2d0b00);
+	border-radius: 15px;
+}
+.box2::after{
+	content: 'Reliable';
+	font-size: 20px;
+	font-style: oblique;
+	position: absolute;
+	color:#fff;
+	display: none;
+	width: 150px;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	top: -50px;
+	right:-120px;
+	box-shadow: 5px 5px 50px indianred, 0px 0px 5px darkred inset;
+
+	background: linear-gradient(45deg, #00093c, #2d0b00);
+	border-radius: 15px;
+}
+.box3::after{
+	content: 'Friendly';
+	font-size: 20px;
+	font-style: oblique;
+	position: absolute;
+	color:#fff;
+	display: none;
+	width: 150px;
+	height: 50px;
+	top: 85px;
+	right:40px;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 5px 5px 50px aliceblue, 0px 0px 5px darkblue inset;
+
+	background: linear-gradient(45deg, #00093c, #2d0b00);
+	border-radius: 15px;
+}
+.box4::after{
+	content: 'Presentation';
+	font-size: 20px;
+	font-style: oblique;
+	position: absolute;
+	color:#fff;
+	width: 150px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	top: 85px;
+	right:-130px;
+	box-shadow: 5px 5px 50px rebeccapurple, 0px 0px 5px mediumpurple inset;
+
+	background: linear-gradient(45deg, #00093c, #2d0b00);
+	border-radius: 15px;
+}
+.box1:hover::after{
+	display: flex;
+
+}
+.box2:hover::after{
+	display: flex;
+	
+}
+.box3:hover::after{
+	display: flex;
+}
+.box4:hover::after{
+	display: flex;
+}
+.box5:hover::after{
+	display: flex;
+}

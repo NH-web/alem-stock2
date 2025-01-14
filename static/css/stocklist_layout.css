@@ -1,0 +1,379 @@
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+/****Side bar design ****/
+.sidebar{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20%;
+	height: 100%;
+	background: #4361EE;
+	border:none;
+	border-top-right-radius:2rem;
+	border-bottom-right-radius: 2rem;
+	box-shadow: 5px 5px 30px rgb(0 0 0 / 78%);
+}
+
+.profile{
+	position: relative;
+	background: #4361EE;
+	width: 95%;
+	height: 3.6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.2), 
+	15px 15px 15px rgba(0,0,0,0.1);
+
+
+	top: 15%;
+	border: none;
+	border-top-right-radius:  2rem;
+	border-bottom-right-radius: 2rem;
+}
+#avatar{
+	position: absolute;
+	width: 35px;
+	left: 10px;
+	
+}
+#uname{
+	position: absolute;
+	font-size: 15px;
+	left: 3.8rem;
+	top: 18%;
+	font-style: normal;
+	color: #fff;
+	
+}
+#toggle-btn{
+	position: absolute;
+	width: 25px;
+	right: 10px;
+}
+#upriv{
+	position: absolute;
+	font-size: 13px;
+	left: 3.8rem;
+	top: 60%;
+	font-style: normal;
+	color: #242424;
+}
+#logo{
+		position: absolute;
+	width: 40px;
+	left: .7rem;
+	top: 1.6rem;
+}
+
+#logoname{
+	position: absolute;
+	font-size: 30px;
+	left: 4.5rem;
+	top: 1.7rem;
+	font-style: oblique;
+	color: #fff;
+	opacity: 0.8;
+
+}
+
+.list-of-options{
+	position: relative;
+	background: transparent;
+	top: 20%;
+	width: 100%;
+	height: 50%;
+	display: inline-block;
+
+}
+.sl{
+	
+	background: transparent;
+	width: 100%;
+	height: 20%;
+	box-shadow: 0px 0px 5px rgb(0 0 0 / 58%);
+
+}
+.sl:hover ~ .stocklist{
+	display: block;
+}
+.stocklist:hover{
+	display: block;
+}
+.stocklist a{
+	text-decoration: none;
+	color: #242424;
+	opacity: 0.8;
+}
+.sl:hover #toggle-btn-s{
+	transform: rotate(90deg);
+}
+
+.sla{
+	position: relative;
+	background: transparent;
+	width: 100%;
+	height: 20%;
+}
+.slas{
+	position: relative;
+	background: transparent;
+	width: 100%;
+	height: 20%;
+}
+.slah{
+	position: relative;
+	background: transparent;
+	width: 100%;
+	height: 20%;
+}
+#s{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	list-style: none;
+	color: #fff;
+	opacity: 0.8;
+}
+#his{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	list-style: none;
+	color: #fff;
+	opacity: 0.8;
+}
+#summ{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	list-style: none;
+	color: #fff;
+	opacity: 0.8;
+}
+.sla{
+	background: transparent;
+	width: 100%;
+	height: 20%;
+}
+.stocklist{
+	display: none;
+	background: #fff;
+	padding: 20px;	
+}
+#toggle-btn-s{
+	position: absolute;
+	width: 20px;
+	left: 12rem;
+	top: -0.1rem;
+}
+#stocklist{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: space-evenly;
+}
+#extras{
+	position: relative;
+	background: transparent;
+	height: 50%;
+	width: 100%;
+}
+#lis{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	top: 12%;
+	list-style: none;
+	color: #fff;
+	opacity: 0.8;
+	left: 20px;
+}
+.foot{
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	bottom: 1.2rem;
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#logout{
+	position: absolute;
+	width: 30%;
+	left: 0;
+	transform: rotateY(180deg);
+	cursor: pointer;
+}
+
+#foota{
+	position: absolute;
+	width: 50%;
+	height: 40px;
+	display: flex;
+	left: 40px;
+	bottom: 40px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	border-radius: .3rem;
+	box-shadow: -5px -5px 20px rgb(255 255 255 / 0.2),
+	10px 10px 20px rgb(0 0 0 /0.1);
+	background: transparent;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+/**** Side Bar Design Ends****/
+
+/**** Main Dashboard Starts****/
+.dashboard{
+	position: absolute;
+	background: transparent;
+	right: 0;
+	width: 80%;
+	height: 100%;
+}
+/**** Search Start****/
+.dashboard form{
+	position: relative;
+	right: 0;
+	width: 100%;
+	background: transparent;
+	height: auto;
+}
+.dashboard input{
+	position: absolute;
+	width: 90%;
+	height: 2.5rem;
+	left: 3rem;
+	top: 1rem;
+	border-radius: .5rem;
+	border: none;
+	padding-left: 5rem;
+	font-size: 12px;
+	box-shadow: 0 0 20px rgb(0 0 0 / 48%);
+}
+#notif{
+	position: absolute;
+	width: 1.5rem;
+	height: 1.5rem;
+	left: 0;
+	top: 0rem;
+	
+}
+.notif{
+	position: relative;
+	
+	width: 20px;
+	height: 20px;
+	left: 56rem;
+	top: 1.6rem;
+}
+.notif::after{
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	right: 0;
+
+	border-radius: 50%;
+	background: red;
+}
+#search{
+	position: absolute;
+	width: 20px;
+	left: 4rem;
+	top: 1.7rem;
+}
+#sear{
+	width: 10px;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/**** Search Ends****/
+
+
+
+/***** table start ****/
+
+.list-of-items{
+	position: relative;
+	width: 60%;
+	height: 57%;
+	right: -5%;
+	bottom: -50px;
+	display: flex;
+	justify-content: center;
+	background: transparent;
+	border: 0;
+
+}
+main.table{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 0 5px rgb(0 0 0 / 40%);
+	border-radius: .3rem;
+	table-layout: fixed;
+	overflow: auto;
+}
+table{
+	position: absolute;
+
+}
+table, th, td{
+	font-size: 12px;
+	padding: 0.4rem;
+}
+thead{
+	
+	width: 100%;
+	border:none;
+	border-radius: .1rem;
+	opacity: 0.6;
+
+	box-shadow: 0px 5px 5px rgb(0 0 0 /38%);
+}
+tbody{
+	
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	table-layout: fixed;
+	background: transparent;
+}
+
+
+.u, .ull{
+	text-align: right;
+}
+.ul2{
+	text-align: right;
+}
+.delete{
+	color: red;
+
+}
+td a{
+	text-decoration: none;
+	color: #226160;	
+}

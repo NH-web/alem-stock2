@@ -1,0 +1,160 @@
+.containers{
+	position: relative;
+	width: 100%;
+	height: 90vh;
+	overflow: auto;
+}
+.sidebar{
+	position: absolute;
+	width: 30%;
+	left: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(20px);
+	border-radius: 1.3rem;
+	box-shadow: 5px 5px 20px rgb(255 255 255 / 38%);
+}
+.list-of-items{
+	position: relative;
+	width: 70%;
+	height: 100%;
+	right: -30%;
+	display: flex;
+	justify-content: center;
+	background: transparent;
+	border: 0;
+	
+}
+main.table{
+	position: absolute;
+	width: 95%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(20px);
+	overflow: auto;
+	border-radius: .8rem;
+}
+table, th, td{
+	padding: 0.6rem;
+}
+thead{
+	
+	width: 100%;
+	border:0 ;
+	border-radius: 1rem;
+	opacity: 0.6;
+	box-shadow: 0px 5px 5px rgb(0 0 0 /38%);
+}
+tbody{
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	table-layout: fixed;
+}
+
+.u, .ull{
+	text-align: right;
+}
+.ul2{
+	text-align: right;
+}
+.delete{
+	color: red;
+
+}
+td a{
+	text-decoration: none;
+	color: #226160;	
+}
+.title{
+	position: absolute;
+	top: 45px;
+	font-size: 35px;
+	color: #226160;
+}
+#title{
+	color: #fff;
+
+	background: #226160;
+	width: 90px;
+}
+.inputtake{
+	position: absolute;
+
+	width: 80%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}#id_username{
+	position: absolute;
+	width: 80%;
+	height: 8%;
+	border:0 ;
+	border-bottom: 2px solid ;
+	border-radius: 0.3rem;
+	background: rgba(255, 255, 255, 0.2);
+	top: 20%;
+	backdrop-filter: blur(20px);
+	font-size: 16px;
+	padding-left: 10px;
+}
+
+#username{
+	position: absolute;
+	font-size: 15px;
+	font-weight:bold;
+	top: 15%;
+	left: 10%;
+	color: #242424;
+	opacity: 0.7;
+
+}
+#id_export_to_csv{
+	position: absolute;
+	top: 35%;
+	border:0;
+	left: 45%;
+}
+#export{
+	position: absolute;
+	font-size: 15px;
+	font-weight:bold;
+	opacity: 0.5;
+	top: 35%;
+	left: 10%;
+}
+
+#submitbtn{
+	position: absolute;
+	width: 40%;
+	height: 10%;
+	border: 0;
+	border-radius: 2rem;
+	top: 60%;
+	background: #226160;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 5px 5px 20px rgb(0 0 0 / 78%);
+}
+.messa{
+	position: absolute;
+	bottom: 5%;
+	width: 20%;
+	height: 20%;
+	z-index: 10;
+	padding: 10px;
+	background: linear-gradient(-45deg,#c370fc,#ff469f);
+	box-shadow: 0px 0px 15px #c370fc, 0px 0px 10px #fff inset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top-right-radius: 2rem;
+	border-bottom-right-radius:2rem ;
+
+}

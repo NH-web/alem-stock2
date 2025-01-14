@@ -1,0 +1,55 @@
+.containers{
+	position: relative;
+	width: 100%;
+	min-height: 95vh ;
+	background: #242424;
+}
+.sidebar{
+	position: absolute;
+	width: 20%;
+	height: 100%;
+	background: ghostwhite;
+	display: block;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+#id_category{
+	position: absolute;
+	width: 90%;
+	height: 2.5rem;
+	border:0;
+	border-radius: 2rem;
+	border-collapse:collapse ;
+	box-shadow: 1px 12px 25px rgb(0 0 0 /68%);
+	background: rgba(0, 0, 0, 0.2);
+	color: #2d0b00;
+	top: 10rem;
+	left: 0.7rem;
+
+}
+
+label[for='id_username' i]{
+	position: absolute;
+	font-size: 20px;
+	top: 8.4rem;
+	font-weight: bold;
+}
+#id_export_to_csv{
+	position: absolute;
+	top: 14rem;
+	left: 8rem;
+	filter: drop-shadow(0px 0px 5px #226160);
+	color:#226160;
+}
+label[for='id_export_to_csv']{
+	position: absolute;
+	font-size: 17px;
+	top: 14rem;
+	left: 0.7rem;
+}
+.list-of-items{
+	position: relative;
+	width: 50%;
+	color: red;
+}

@@ -1,0 +1,121 @@
+.container2{
+	position: relative;
+	width: 100%;
+	height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.boxm{
+	position: absolute;
+	width: 60%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.09);
+	backdrop-filter: blur(20px);
+	border-radius: 2rem;
+	box-shadow: 0px 0px 10px 5px #242424 inset;
+}
+.f{
+	position: relative;
+	width: 99%;
+	height: 99%;
+	background: rgba(255, 255, 255, 0.2);
+	border: none;
+	border-radius:2rem ;
+	top: 0.5%;
+	left:0.5%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0px 20px #226160;
+
+
+}
+label{
+	position: relative;
+	font-size: 17px;
+	color: #fff;
+	opacity: 0.7;
+	top: 45%;
+	right: 40%;
+}
+label[for='id_category' i]{
+	position: relative;
+	top: 45%;
+
+}
+label[for='id_username' i]{
+	position: relative;
+	top: 45%;
+}
+#id_username{
+	width: 100%;
+	height: 2.5rem;
+	color: #fff;
+	border-radius: .5rem;
+	background: rgba(0, 0, 0, 0.35);
+	border-bottom: 2px solid #226160;
+}
+#id_category{
+	width: 90%;
+	height: 2.5rem;
+	color: #fff;
+	border-radius: .5rem;
+	background: rgba(0, 0, 0, 0.35);
+	border-bottom: 2px solid #226160;
+}
+#k{
+	position: absolute;
+	top: 15%;
+	left: 38%;
+}
+#headd{
+	position: absolute;
+	left: 40%;
+	font-size: 40px;
+	top: 8%;
+	z-index: 10;
+	color: #226160;
+
+}
+input{
+	width: 80%;
+	height: 2.5rem;
+	background: rgba(0, 0, 0, 0.35);
+	border: none;
+	border-radius: .5rem;
+	margin: 10px;
+	padding: 10px;
+	border-bottom: 2px solid #226160;
+	color: #fff;
+}
+#submitbtn{
+	position: absolute;
+	width: 20%;
+	height: 10%;
+	border: 0;
+	border-radius: 2rem;
+	top: 80%;
+	background: #226160;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 5px 5px 20px rgb(0 0 0 / 78%);
+}
+.messa{
+	position: absolute;
+	bottom: 5%;
+	width: 20%;
+	height: 20%;
+	z-index: 10;
+	padding: 10px;
+	background: linear-gradient(-45deg,#c370fc,#ff469f);
+	box-shadow: 0px 0px 15px #c370fc, 0px 0px 10px #fff inset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top-right-radius: 2rem;
+	border-bottom-right-radius:2rem ;
+
+}

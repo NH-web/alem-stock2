@@ -1,0 +1,67 @@
+.container21{
+	position: relative;
+	width: 100%;
+	height: 90vh;
+
+
+}
+.cont22{
+	position: relative;
+	width: 90%;
+	height: 20%;
+	background: rgba(255, 255, 255, 0.2);
+	left: 5%;
+	top: 10%;
+	display: flex;
+	border-radius: 2rem;
+	box-shadow: 0 0 20px #226160;
+
+}
+h1{
+	position: relative;
+	font-size: 18px;
+	margin: 20px;
+	top: -10px;	
+	left: 50px;
+	color: #fff;
+	font-weight: bold;
+	font-style: oblique;
+}
+h5{
+	position: relative;
+	font-size: 16px;
+	top: 60px;
+	left: -60px;
+	color: #fff;
+	opacity: 0.6;
+}
+.btn{
+	position: relative;
+	width: 20%;
+	height: 3rem;
+	top: 40%;
+	left: 28%;
+	margin-right: 20px;
+	border-radius: 2rem;
+	border:none;
+	background: linear-gradient(-20deg,#88a9c3,#2b4257);
+	box-shadow: 0px 5px 20px #2b4257;
+	cursor: pointer;
+	color: #fff;
+}
+.messa{
+	position: absolute;
+	bottom: 5%;
+	width: 20%;
+	height: 20%;
+	z-index: 10;
+	padding: 10px;
+	background: linear-gradient(-45deg,#c370fc,#ff469f);
+	box-shadow: 0px 0px 15px #c370fc, 0px 0px 10px #fff inset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top-right-radius: 2rem;
+	border-bottom-right-radius:2rem ;
+
+}

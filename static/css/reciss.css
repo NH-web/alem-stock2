@@ -1,0 +1,416 @@
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	overflow: auto;
+}
+
+/****Side bar design ****/
+.sidebar{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20%;
+	height: 100%;
+	background: #4361EE;
+	border:none;
+	border-top-right-radius:2rem;
+	border-bottom-right-radius: 2rem;
+	box-shadow: 2px 2px 20px rgb(0 0 0 / 68%);
+}
+
+.profile{
+	position: relative;
+	background: #4361EE;
+	width: 95%;
+	height: 3.6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.2), 
+	15px 15px 15px rgba(0,0,0,0.1);
+
+
+	top: 15%;
+	border: none;
+	border-top-right-radius:  2rem;
+	border-bottom-right-radius: 2rem;
+}
+#avatar{
+	position: absolute;
+	width: 35px;
+	left: 10px;
+	
+}
+#uname{
+	position: absolute;
+	font-size: 15px;
+	left: 3.8rem;
+	top: 18%;
+	font-style: normal;
+	color: #fff;
+	
+}
+#toggle-btn{
+	position: absolute;
+	width: 25px;
+	right: 10px;
+}
+#upriv{
+	position: absolute;
+	font-size: 13px;
+	left: 3.8rem;
+	top: 60%;
+	font-style: normal;
+	color: #242424;
+}
+#logo{
+		position: absolute;
+	width: 40px;
+	left: .7rem;
+	top: 1.6rem;
+}
+
+#logoname{
+	position: absolute;
+	font-size: 30px;
+	left: 4.5rem;
+	top: 1.7rem;
+	font-style: oblique;
+	color: #fff;
+	opacity: 0.8;
+
+}
+
+.list-of-options{
+	position: relative;
+	background: transparent;
+	top: 20%;
+	width: 100%;
+	height: 50%;
+	display: inline-block;
+
+}
+.sl{
+	
+	background: transparent;
+	width: 100%;
+	height: 20%;
+	box-shadow: 0px 0px 5px rgb(0 0 0 / 58%);
+
+}
+.sl:hover ~ .stocklist{
+	display: block;
+}
+.stocklist:hover{
+	display: block;
+}
+.stocklist a{
+	text-decoration: none;
+	color: #242424;
+	opacity: 0.8;
+}
+.sl:hover #toggle-btn-s{
+	transform: rotate(90deg);
+}
+
+.sla{
+	position: relative;
+	background: transparent;
+	width: 100%;
+	height: 20%;
+}
+.slas{
+	position: relative;
+	background: transparent;
+	width: 100%;
+	height: 20%;
+}
+.slah{
+	position: relative;
+	background: transparent;
+	width: 100%;
+	height: 20%;
+}
+#s{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	list-style: none;
+	color: #fff;
+	opacity: 0.8;
+}
+#his{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	list-style: none;
+	color: #fff;
+	opacity: 0.8;
+}
+#summ{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	list-style: none;
+	color: #fff;
+	opacity: 0.8;
+}
+.sla{
+	background: transparent;
+	width: 100%;
+	height: 20%;
+}
+.stocklist{
+	display: none;
+	background: #fff;
+	padding: 20px;	
+}
+#toggle-btn-s{
+	position: absolute;
+	width: 20px;
+	left: 12rem;
+	top: -0.1rem;
+}
+#stocklist{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: space-evenly;
+}
+#extras{
+	position: relative;
+	background: transparent;
+	height: 50%;
+	width: 100%;
+}
+#lis{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	top: 12%;
+	list-style: none;
+	color: #fff;
+	opacity: 0.8;
+	left: 20px;
+}
+.foot{
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	bottom: 1.2rem;
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#logout{
+	position: absolute;
+	width: 30%;
+	left: 0;
+	transform: rotateY(180deg);
+	cursor: pointer;
+}
+
+#foota{
+	position: absolute;
+	width: 50%;
+	height: 40px;
+	display: flex;
+	left: 40px;
+	bottom: 40px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	border-radius: .3rem;
+	box-shadow: -5px -5px 20px rgb(255 255 255 / 0.2),
+	10px 10px 20px rgb(0 0 0 /0.1);
+	background: transparent;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+/**** Side Bar Design Ends****/
+
+/**** Main Dashboard Starts****/
+.dashboard{
+	position: absolute;
+	background: transparent;
+	right: 0;
+	width: 80%;
+	height: 100%;
+}
+
+#header{
+	position: absolute;
+	font-size: 25px;
+	top: 5%;
+	left: 40%;
+	opacity: 0.7;
+	font-style: oblique;
+}
+
+.f{
+	position: relative;
+	width: 50%;
+	height: 80%;
+	top: 15%;
+	left: 5%;
+	border-radius: .9rem;
+	background: transparent;
+	border: none;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+	overflow: auto;
+}
+.f input{
+	position: relative;
+	width: 60%;
+	height: 7%;
+	left: 43px;
+	place-items: left;
+	border-radius: .3rem;
+	margin-top: 20px;
+	background: transparent;
+	border: 1px solid;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	top: 15%;
+	left: 11rem;
+}
+.f span{
+	position: relative;
+	top: 100px;
+	right: 290px;
+	
+}
+#id_category{
+	position: relative;
+	width: 60%;
+	height: 7%;
+	background: transparent;
+	top: 12%;
+	left: 175px;
+	border: 1px solid #242424;
+	border-radius: .3rem;
+
+}
+#submitbtn{	
+	position: absolute;
+	width: 25%;
+	height: 10%;
+	top: 23rem;
+	background: #4361EE;
+	border: none;
+	border-radius: 2rem;
+	color: #fff;
+	cursor: pointer;
+}
+#diff{
+	position: absolute;
+	top: 14%;
+	left: 25px;
+}
+#n{
+	position: absolute;
+	top: 28%;
+	left: 25px;
+}
+#bg{
+	position: absolute;
+	top: 42%;
+	left: 25px;
+}
+#pri{
+	position: absolute;
+	top: 56%;
+	left: 25px;
+}
+#onhan{
+	position: absolute;
+	top: 68%;
+	left: 25px;
+}
+
+/***** price list ******/
+.price-list{
+	position: relative;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+	border: none;
+	border-radius: .5rem;
+	width: 40%;
+	height: 80%;
+	left: 58%;
+	bottom: 65%;
+	overflow: auto;
+	
+
+}
+.head{
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 13%;
+	align-items: center;
+	justify-content: center;
+	background:  rgba(67, 97, 238, 0.7);
+	border:none;
+	/**box-shadow: 2px 2px 15px rgba(0,0,0,0.3);**/
+}
+.price-list h1{
+	position: absolute;
+	font-size: 25px;
+	font-style: oblique;	
+	color: rgba(0, 0, 0, 0.7);
+
+}
+.prices{
+	position: absolute;
+	background: transparent;
+	width: 100%;
+	height: 86%;
+	padding: 20px;
+	top: 3.7rem;
+	display: flex	;
+	align-items: center;
+	gap: 10px;
+
+	justify-content: space-evenly;
+}
+.prices ul{
+	position: absolute;
+	list-style: none;
+	font-size: 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	left: 20px;
+	top: 30px;
+	gap:5px;
+	font-style: oblique;
+
+}
+
+.prices span{
+	position: relative;
+	width: 80%;
+	height: 30px;
+	right: -12rem;
+	top: -2rem;
+	color: #226160;
+	/*background: #4361EE;*/
+	border-radius: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

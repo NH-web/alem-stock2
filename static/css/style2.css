@@ -1,0 +1,375 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.dashboard{
+	position: absolute;
+	background: transparent;
+	right: 0;
+	width: 80%;
+	height: 100%;
+}
+/**** Search Start****/
+form{
+	position: relative;
+	right: 0;
+	width: 100%;
+	background: red;
+	height: auto;
+}
+input{
+	position: absolute;
+	width: 90%;
+	height: 2.5rem;
+	left: 3rem;
+	top: 1rem;
+	border-radius: .5rem;
+	border: none;
+	padding-left: 5rem;
+	font-size: 12px;
+	box-shadow: 0 0 20px rgb(0 0 0 / 48%);
+}
+#notif{
+	position: absolute;
+	width: 1.5rem;
+	height: 1.5rem;
+	left: 0;
+	top: 0rem;
+	
+}
+.notif{
+	position: relative;
+	
+	width: 20px;
+	height: 20px;
+	right: 0;
+
+	border-radius: 50%;
+	background: red;
+}
+#search{
+	position: absolute;
+	width: 20px;
+	left: 4rem;
+	top: 1.7rem;
+}
+#sear{
+	width: 10px;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/**** Search Ends****/
+
+/**** first-head Starts****/
+
+.overview{
+	position: relative;
+	background: transparent;
+	width: 95%;
+	height: 30%;
+	left: 2rem;
+	top: 4rem;
+	display: flex;
+}
+#overview{
+	position: absolute;
+	font-size: 30px;
+	color: rgba(0,0,0,0.8);
+	left: 2%;
+	font-style: oblique;
+	}
+.sales{
+	position: absolute;
+	top: 30%;
+	left: 2%;
+	width: 20%;
+	height: 100px;
+	background: rgba(255,255,255,1);
+	border: none;
+	border-radius: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0 10px rgb(0 0 0 / 58%);
+}
+.sales h1{
+	position: absolute;
+	font-size: 22px;
+	color: #242424;
+	opacity: 0.7;
+	top: 10%;
+	font-style: oblique;
+}
+.sales span{
+	position: absolute;
+	font-size: 18px;
+	color: #242424;
+	opacity: 0.8;
+	font-weight: bold;
+	right: 10px;
+	top: 60%;
+}
+.sales img{
+	position: absolute;
+	left: 10px;
+	top: 60%;	
+}
+.purch{
+	position: relative;
+	width: 20%;
+	height: 100px;
+	background: transparent;
+	left: 24%;
+	top: 30%;
+	border: none;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 10px rgb(0 0 0 / 58%);
+}
+.purch h1{
+	position: absolute;
+	font-size: 22px;
+	font-style:oblique;
+	color: #242424;
+	opacity: 0.7;
+	
+	top: 10%;
+}
+.purch span{
+	position: absolute;
+	font-size: 18px;
+	color: #242424;
+	opacity: 0.8;
+	right: 10px;
+	top: 60%;
+	font-weight: bold;
+}
+.purch img{
+	position: absolute;
+	left: 10px;
+	top: 60%;	
+}
+.sales-amount{
+	position: relative;
+	width: 20%;
+	height: 100px;
+	background: transparent;
+	left: 26%;
+	top: 30%;
+	border: none;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 10px rgb(0 0 0 / 58%);
+
+}
+.sales-amount h1{
+	position: absolute;
+	font-size: 22px;
+	font-style:oblique;
+	color: #242424;
+	opacity: 0.7;
+	top: 10%;
+}
+.sales-amount span{
+	position: absolute;
+	font-size: 18px;
+	color: #242424;
+	opacity: 0.9;
+	right: 10px;
+	top: 60%;
+}
+.sales-amount img{
+	left: 10px;
+	top: 60%;	
+}
+
+.purch-amount{
+	position: relative;
+	width: 20%;
+	height: 100px;
+	background: transparent;
+	left: 28%;
+	top: 30%;
+	border: none;
+	border-radius: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 10px rgb(0 0 0 / 58%);
+
+}
+.purch-amount h1{
+	position: absolute;
+	font-size: 22px;
+	font-style:oblique;
+	color: #242424;
+	opacity: 0.7;
+	top: 10%;
+}
+.purch-amount span{
+	position: absolute;
+	font-size: 18px;
+	color: #242424;
+	opacity: 0.9;
+	right: 10px;
+	top: 60%;
+}
+.purch-amount img{
+	left: 10px;
+	top: 60%;	
+}
+#cart{
+	position: absolute;
+	width: 20px;
+
+}
+/**** first-head ends****/
+
+.price-list{
+	position: relative;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	border: none;
+	border-radius: .5rem;
+	width: 32%;
+	height: 58%;
+	bottom: 49%;
+	overflow: auto;
+	
+
+}
+.head{
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 13%;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	box-shadow: -10px -10px 20px rgba(255,255,255,0.2),10px 10px 20px rgba(0,0,0,0.1);
+}
+.price-list h1{
+	position: absolute;
+	font-size: 25px;
+	font-style: oblique;	
+	color: rgba(0, 0, 0, 0.7);
+
+}
+.prices{
+	position: absolute;
+	background: transparent;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	top: 3.3rem;
+	display: flex	;
+	align-items: center;
+	gap: 10px;
+	justify-content: space-evenly;
+}
+.prices ul{
+	position: absolute;
+	list-style: none;
+	font-size: 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	left: 20px;
+	top: 10px;
+	gap:5px;
+
+}
+
+.prices span{
+	position: relative;
+	width: 30%;
+	height: 30px;
+	right: -12rem;
+	text-align: right;
+	color: #fff;
+	background: #4361EE;
+	border-radius: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/***** table start ****/
+
+.list-of-items{
+	position: relative;
+	width: 60%;
+	height: 57%;
+	right: -5%;
+	bottom: -50px;
+	display: flex;
+	justify-content: center;
+	background: transparent;
+	border: 0;
+
+}
+main.table{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 0 5px rgb(0 0 0 / 40%);
+	border-radius: .3rem;
+	table-layout: fixed;
+	overflow: auto;
+}
+table{
+	position: absolute;
+
+}
+table, th, td{
+	font-size: 12px;
+	padding: 0.4rem;
+}
+thead{
+	
+	width: 100%;
+	border:none;
+	border-radius: .1rem;
+	opacity: 0.6;
+
+	box-shadow: 0px 5px 5px rgb(0 0 0 /38%);
+}
+tbody{
+	
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	table-layout: fixed;
+	background: transparent;
+}
+
+
+.u, .ull{
+	text-align: right;
+}
+.ul2{
+	text-align: right;
+}
+.delete{
+	color: red;
+
+}
+td a{
+	text-decoration: none;
+	color: #226160;	
+}
+	left: 67%;
